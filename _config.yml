@@ -1,0 +1,9 @@
+title: "AI Patterns!"
+description: "Sharing what I've discovered through obsessive study"
+remote_theme: pmarsceill/just-the-docs
+
+url: "https://eustin.github.io"
+baseurl: "/ai-patterns"
+
+search_enabled: true
+heading_anchors: true

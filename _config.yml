@@ -10,3 +10,7 @@ heading_anchors: true
 
 color_scheme: dark
 
+callouts:
+  highlight:
+    color: red
+

@@ -1,5 +1,5 @@
 ---
-title: LLM response accuracy patterns
+title: LLM response accuracy problems
 nav_order: 2
 ---
 

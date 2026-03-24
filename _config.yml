@@ -1,6 +1,6 @@
 title: "AI Patterns!"
 description: "Sharing what I've discovered through obsessively studying the field"
-remote_theme: pmarsceill/just-the-docs
+theme: just-the-docs
 
 url: "https://eustin.github.io"
 baseurl: "/ai-patterns"

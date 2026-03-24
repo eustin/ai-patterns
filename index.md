@@ -1,3 +1,7 @@
+---
+title: Home
+layout: home
+---
 
 {: .highlight }
 100% Certified Organic!

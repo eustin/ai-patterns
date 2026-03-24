@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: home
+nav_order: 1
 ---
 
 {: .highlight }
@@ -42,7 +43,7 @@ I also (very rarely) write [a blog](https://embracingtherandom.com). I've found 
 
 A taste of things to come.
 
-## Increasing LLM response accuracy
+## [Increasing LLM response accuracy]({% link docs/patterns/accuracy.md %})
 
 * LLM needs access to private data to produce useful responses
 * AI doesn't cite sources

@@ -5,6 +5,13 @@ theme: just-the-docs
 url: "https://eustin.github.io"
 baseurl: "/ai-patterns"
 
+defaults:
+  - scope:
+      path: docs
+      type: pages
+    values:
+      layout: default
+
 search_enabled: true
 heading_anchors: true
 

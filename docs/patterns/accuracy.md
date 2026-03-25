@@ -43,9 +43,28 @@ Ask the LLM to generate response based on a set of "trusted" documents:
 * Can inject private data at runtime only, solving many privacy issues while making LLM responses more relevant to sensitive internal use cases
 * Hallucinations reduced by injecting "relevant" information (i.e. the retrieved documents) and asking it to cite specific sources
 
+#### Basic RAG architecture
+
+* Start with where we are going to end
+* Create simpler version of Figure 3-2 RAG architecture
+* User query -> Question-answering pipeline -> retrieval step (searches document store for "relevant" chunks) -> generation step (augments prompt with contextual chunks and generate LLM answer grouded in contextual chunks)
+
 #### What is a "relevant" document?
 
-TBC
+* On chunks
+  * Need to split docs into smaller parts for serveral reasons (model context window size, context dillution, what else?)
+  * Make chunks information dense as possible -> strip chunks of whitespace
+  * Add metadata so that LLM can cite chunks in responses
+* On indexing chunks - in document store
+* On searching for relevant chunks
+    * Need a whole bit on BM25 and semantic indexing. I read about hybrid approaches at scale
+    * Apparently pure embeedding-based retrieval without keyword-based retrieval will be inadequate
+* Should I cover chunking strategies depending on document type?
+  * Chunking with overlap to limit "important" info being split between two chunks - what does research say? I saw something about overlap not being as effective as people think
+* Ingesting PDFs
+  * LlamaParse - AI based document parsing that can extract tables and images and convert them into formats like Markdown
+  * Screenshot of PDF to multimodal LLM
+* On the importance of contextual retrieval* On the importance of contextual retrieval* On the importance of contextual retrieval* On the importance of contextual retrieval* On the importance of contextual retrieval* On the importance of contextual retrieval* On the importance of contextual retrieval* On the importance of contextual retrieval
 
 #### What does a RAG prompt look like? 
 
@@ -76,3 +95,25 @@ Example prompt showing "grouding" LLM's response by injecting the "retrieved" re
 
 
 * TBC - modify silly example, injecting contextual docs directly into the prompt.  
+
+##### LlamaIndex example of prompt
+
+```python
+# instruction
+messages = [
+    ChatMessage(
+        role="system", 
+        content="Use the following text to answer the given question."
+    )
+]
+# context
+messages += [
+    ChatMessage(role="system", content=node.text) for node in retrieved_nodes
+]
+# query
+messages += [
+    ChatMessage(role="user", content=query)
+]
+```
+
+

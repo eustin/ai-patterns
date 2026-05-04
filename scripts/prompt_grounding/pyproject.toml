@@ -6,3 +6,8 @@ dependencies = [
     "huggingface-hub~=1.13.0",
     "llama-cpp-python~=0.3.22",
 ]
+
+[dependency-groups]
+dev = [
+    "black>=26.3.1",
+]

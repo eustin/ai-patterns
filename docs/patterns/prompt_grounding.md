@@ -39,7 +39,18 @@ Let's ask it a question it cannot know the correct answer to:
 
 > Who won Battle I of Road to Las Vegas 2026?
 
-This is the response:
+```python
+question = "Who won Battle I of Road to Las Vegas 2026?"
+
+llm_response = llm.create_chat_completion(
+    messages=[{"role": "user", "content": question}],
+    temperature=TEMPERATURE,
+)
+answer = llm_response["choices"][0]["message"]["content"]
+print(answer)
+```
+
+This is the `answer`:
 
 > As of today, November 2, 2023, **Team Liquid** won Battle I of Road to Las Vegas 2026!
 > 

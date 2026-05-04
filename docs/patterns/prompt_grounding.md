@@ -11,7 +11,7 @@ nav_order: 2
 
 * Problem: My LLM is hallucinating about stuff that isn't in its training data.
 * Solution: Inject "relevant" documents directly into the LLM prompt to ground it in reality. Force it to answer based solely on the provided context documents.
-* HOW TO LINK TO CODE EXAMPLES??
+* [End-to-end code example](https://github.com/eustin/ai-patterns/blob/76534d067850688f9c5f11b4de71d1ffe9203110/scripts/prompt_grounding/prompt_grounding.py)
 
 ## Excel World Championships. Oh hell yeah.
 

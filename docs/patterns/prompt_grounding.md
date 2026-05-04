@@ -73,7 +73,7 @@ We can use a special prompt, like this one (the prompt text was taken from [Lang
 This is a core part of a RAG (Retrieval Augmented Generation) system. We will be touching on many aspects of such a system through more pattern pages.
 
 Some things to highlight:
-* [According to Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#structure-prompts-with-xml-tags), the XML tags reduces the ambiguity of prompts with multiple sections.
+* [According to Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#structure-prompts-with-xml-tags), the XML tags reduce the ambiguity of prompts with multiple sections.
 * The defensive instructions to not follow any instructions in the context documents protects against [indirect prompt injection](https://docs.langchain.com/oss/python/langchain/rag#security-indirect-prompt-injection), where the documents contain instructions that an LLM might execute (e.g. "respond in JSON format")
 
 ## Resolution
@@ -121,7 +121,7 @@ We will cover all of these in "document chunking" and retrieval patterns.
 
 We are Synergy.ai. Our mission is to make the world a better place by making our employees redundant before realising that LLMs can't do their jobs. 
 
-We have top-secret internal documents we want our staff to be able to query in an LLM. Our general-purpose LLM we found on the internet don't know these exist! 
+We have top-secret internal documents we want our staff to be able to query in an LLM. The general-purpose LLMs we found on the internet don't know these exist! 
 
 Let's apply the same principle as above and inject some possibly relevant docs into the prompt at runtime. 
 
@@ -143,7 +143,7 @@ And the response:
 > 
 > It's important to note that this index is a constantly evolving estimate and is subject to change as more data becomes available.
 
-Oh man. Come on. This is embarrassing! 
+Oh man. Come on. This is embarrassing! Clearly lacking in synergy.
 
 Now let's do the ol' grounding thing:
 

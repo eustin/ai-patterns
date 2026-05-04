@@ -3,7 +3,7 @@ title: Prompt Grounding
 nav_order: 2
 ---
 
-# TL;DR
+## TL;DR
 
 * Problem: My LLM is hallucinating about stuff that isn't in its training data.
 * Solution: Inject "relevant" documents directly into the LLM prompt to ground it in reality. Force it to answer based solely on the provided context documents.
@@ -12,7 +12,7 @@ nav_order: 2
 - TOC
 {:toc}
 
-# Excel World Championships. Oh hell yeah.
+## Excel World Championships. Oh hell yeah.
 
 [Excel World Championships exists](https://excel-esports.com). Oh sweet nerds, how I love you. Do yourself a favour and watch this:
 
@@ -61,7 +61,7 @@ This is the `answer`:
 
 ...wtf? Pure rubbish! Silly LLM. You know not what you do not know. How can you be so confident while being completely wrong? Sounds like some people we've met in real life, right?
 
-## Ground the LLM in reality
+### Ground the LLM in reality
 
 Our LLM has taken too much acid and we need to bring it back to Earth. How can we do that? 
 
@@ -90,7 +90,7 @@ Some things to highlight:
 * [According to Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#structure-prompts-with-xml-tags), the XML tags reduce the ambiguity of prompts with multiple sections.
 * The defensive instructions to not follow any instructions in the context documents protects against [indirect prompt injection](https://docs.langchain.com/oss/python/langchain/rag#security-indirect-prompt-injection), where the documents contain instructions that an LLM might execute (e.g. "respond in JSON format")
 
-## Resolution
+### Resolution
 
 Let's throw some water on the LLM's face and tell it to snap out of it. Let's inject some relevant docs into our fancy prompt:
 
@@ -120,7 +120,7 @@ Ask the same question:
 
 Nice. We got the right answer. The LLM gave us more than we asked for, but it was correct!
 
-## What we haven't covered
+### What we haven't covered
 
 This is a silly toy example. We haven't touched these things yet:
 
@@ -131,7 +131,7 @@ This is a silly toy example. We haven't touched these things yet:
 
 We will cover all of these in "document chunking" and retrieval patterns.
 
-# Let's talk business: Giving LLMs access to your private data
+## Let's talk business: Giving LLMs access to your private data
 
 We are Synergy.ai. Our mission is to make the world a better place by making our employees redundant before realising that LLMs can't do their jobs. 
 

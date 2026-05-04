@@ -2,15 +2,14 @@
 title: Prompt Grounding
 nav_order: 2
 ---
+- TOC
+{:toc}
 
 ## TL;DR
 
 * Problem: My LLM is hallucinating about stuff that isn't in its training data.
 * Solution: Inject "relevant" documents directly into the LLM prompt to ground it in reality. Force it to answer based solely on the provided context documents.
 * HOW TO LINK TO CODE EXAMPLES??
-
-- TOC
-{:toc}
 
 ## Excel World Championships. Oh hell yeah.
 

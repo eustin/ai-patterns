@@ -9,6 +9,9 @@ nav_order: 2
 * Solution: Inject "relevant" documents directly into the LLM prompt to ground it in reality. Force it to answer based solely on the provided context documents.
 * HOW TO LINK TO CODE EXAMPLES??
 
+- TOC
+{:toc}
+
 # Excel World Championships. Oh hell yeah.
 
 [Excel World Championships exists](https://excel-esports.com). Oh sweet nerds, how I love you. Do yourself a favour and watch this:

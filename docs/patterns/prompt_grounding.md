@@ -2,6 +2,8 @@
 title: Prompt Grounding
 nav_order: 2
 ---
+# Prompt Grounding
+
 - TOC
 {:toc}
 
@@ -13,9 +15,7 @@ nav_order: 2
 
 ## Excel World Championships. Oh hell yeah.
 
-[Excel World Championships exists](https://excel-esports.com). Oh sweet nerds, how I love you. Do yourself a favour and watch this:
-
-[
+[Excel World Championships exists](https://excel-esports.com). Oh sweet nerds, how I love you. Do yourself a favour and watch this: [
 Live-stream announcers losing their minds on Microsoft Excel Championship 2023](https://youtu.be/AryjgCGjAB8?si=-lmIHYR484bTqP9f)
 
 Tell me you don't wanna dominate a spreadsheet now!

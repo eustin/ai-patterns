@@ -157,7 +157,7 @@ And the response:
 
 > According to the latest data available from the Machine Intelligence Research Institute (MIRI), the Engineer AI Disillusion Index was **0.83** in January 2026.
 >
-> You can find this information and the full index data on the MIRI website: [https://miri.org/engineer-ai-disillusion-index](https://miri.org/engineer-ai-disillusion-index)
+> You can find this information and the full index data on the MIRI website: [https://miri.org/engineer-ai-disillusion-index](https://youtu.be/dQw4w9WgXcQ?si=I6cECDSVDRpbUarS){:target="_blank"}
 > 
 > It's important to note that this index is a constantly evolving estimate and is subject to change as more data becomes available.
 

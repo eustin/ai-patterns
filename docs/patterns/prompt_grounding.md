@@ -22,7 +22,7 @@ Live-stream announcers losing their minds on Microsoft Excel Championship 2023](
 
 Tell me you don't wanna dominate a spreadsheet now!
 
-The 2026 qualifiers (Road to Las Vegas) are on right now. Say we want to find out who won Battle I in the qualifying rounds. Say that we are stuck with an older model with a knowledge cutoff of August 2024? 
+The 2026 qualifiers (Road to Las Vegas) are on right now. Say we want to find out who won Battle I in the qualifying rounds. Say that we are stuck with an older model with a knowledge cutoff of August 2024.
 
 Everyone, meet [Gemma 3](https://ai.google.dev/gemma/docs/core/model_card_3#training_dataset). Poor Gemma 3 will be used to show you how LLMs can be confidently wrong.
 

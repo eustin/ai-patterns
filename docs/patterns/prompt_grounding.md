@@ -51,7 +51,7 @@ This is the response:
 
 Our LLM has taken too much acid and we need to bring it back to Earth. How can we do that? 
 
-We can use a special prompt, like this one (the prompt text was taken from [LangChain documentation](https://docs.langchain.com/oss/python/langchain/rag#rag-chains):
+We can use a special prompt, like this one (the prompt text was taken from [LangChain documentation](https://docs.langchain.com/oss/python/langchain/rag#rag-chains)):
 
 > You are an assistant for question-answering tasks.
 > Use the following pieces of retrieved context to answer the question.
@@ -78,8 +78,7 @@ Some things to highlight:
 
 ## Resolution
 
-* Let's throw a bucket of ice on the LLM's face and tell it to snap out of it.
-* Show the full prompt again, but this time with the contextual docs injected
+Let's throw some water on the LLM's face and tell it to snap out of it. Let's inject some relevant docs into our fancy prompt:
 
 > You are an assistant for question-answering tasks.
 > Use the following pieces of retrieved context to answer the question.
@@ -101,33 +100,42 @@ Some things to highlight:
 > Who won Battle I of Road to Las Vegas 2026?
 > \</question>
 
-* Ask question again, and get the answer.
+Ask the same question:
 
 > Daisuke Yamada won Battle I of Road to Las Vegas 2026. Jean Wolleh placed second, and Jasper van Merle finished third. These were the top three results for the event.
 
-* Got the answer right, but provided more than asked for? 
+Nice. We got the right answer. The LLM gave us more than we asked for, but it was correct!
 
 ## What we haven't covered
 
-* This is a number one bullshit toy scenario - we haven't touched on how to find relevant docs to inject, nor have we touched what the hell a "doc" is. We will cover them off in future patterns about document chunking, indexing and retrieval.
-* Haven't touched on getting LLM to cite sources so you can trust it. Will do that in document chunking.
+This is a silly toy example. We haven't touched these things yet:
+
+* How can we find "relevant" documents to inject?
+* What on earth is a "doc" in this context?
+* What if I have a massive document that can't fit in the model's context window?
+* The RAG gave me an answer but I don't trust it.
+
+We will cover all of these in "document chunking" and retrieval patterns.
 
 # Let's talk business: Giving LLMs access to your private data
 
-* We are Synergy.ai. 
-* We have top secret internal documents we want our LLM to know about. But because they are top secret, they aren't in the LLM's training data, nor do we want it to be in the training data.
-* Let's illustrate how injecting private documents at "runtime", one of which contains the answer, helps reduce the LLM's level of bullshit.  
-* Say we have internal documents our LLM doesn't have access to:
+We are Synergy.ai. Our mission is to make the world a better place by making our employees redundant before realising that LLMs can't do their jobs. 
+
+We have top-secret internal documents we want our staff to be able to query in an LLM. Our general-purpose LLM we found on the internet don't know these exist! 
+
+Let's apply the same principle as above and inject some possibly relevant docs into the prompt at runtime. 
+
+Here are the docs:
 
 > - CEO Hype Rate for June 2026 was 800 Altmans, up 3,000% year on year.
 > - Our top model, AgiForRealsiesThisTime, is...like...too powerful for public consumption...maaaan. It's a game ch4ng0rrrr!!!
-> - In 2026, our Engineer AI Disillusion Rate was 10,000 Anthropics, increasing 1,337% from the prior year.
+> - In January 2026, our Engineer AI Disillusion Rate was 10,000 Anthropics, increasing 1,337% from the prior year.
 
-* Ask it the question - how many anthropics is the engineer AI disillusion index?
+Let's ask it a question without our special prompt template:
 
-> How many Anthropics is the Engineer AI Disillusion index our 2026 annual report?
+> How many Anthropics is the Engineer AI Disillusion index in Jan 2026?
 
-* See bullshit response
+And the response:
 
 > According to the latest data available from the Machine Intelligence Research Institute (MIRI), the Engineer AI Disillusion Index was **0.83** in January 2026.
 >
@@ -135,7 +143,9 @@ Some things to highlight:
 > 
 > It's important to note that this index is a constantly evolving estimate and is subject to change as more data becomes available.
 
-* Ground it in the exact same prompt as before and ask same question.
+Oh man. Come on. This is embarrassing! 
+
+Now let's do the ol' grounding thing:
 
 >    You are an assistant for question-answering tasks.
 >    Use the following pieces of retrieved context to answer the question.
@@ -156,8 +166,11 @@ Some things to highlight:
 >    How many Anthropics is the Engineer AI Disillusion index in Jan 2026?  
 >    \</question>
 
-* Show answer
+Please answer correctly:
 
 > In January 2026, the Engineer AI Disillusion Rate was 10,000 Anthropics. This represents a significant increase of 1,337% compared to the previous year. I do not have information on any other relevant data.
 
-* Got the answer right...but last sentence wasn't necessary!
+YES. The answer is correct. Some unnecessary stuff at the end. But this is much better.
+
+Justin.
+

@@ -7,7 +7,7 @@ from llama_cpp import Llama
 HUGGING_FACE_REPO_ID = "unsloth/gemma-3-4b-it-GGUF"
 MODEL_FILENAME = "gemma-3-4b-it-Q4_K_M.gguf"
 
-# For reproducability
+# For reproducibility
 MODEL_REVISION = "5c28c76ebfeeee5f3676f0518e5fc2ab67beffb4"
 TEMPERATURE = 0.0
 

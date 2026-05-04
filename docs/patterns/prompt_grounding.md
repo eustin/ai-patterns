@@ -5,31 +5,49 @@ nav_order: 2
 
 # TL;DR
 
-> Problems:
-> * My LLM is hallucinating about stuff that isn't in its training data
-> * My LLM wasn't trained on our private data so it can't answer questions about it.
-> * I can't afford to train or fine tune an LLM. How can I make it aware of latest data? etc
+> Problem: My LLM is hallucinating about stuff that isn't in its training data.
 > 
-> Solution: Inject "relevant" documents directly into the LLM prompt to ground it in reality. Force it to answer based solely on the provided context documents. Ask it to cite sources.
+> Solution: Inject "relevant" documents directly into the LLM prompt to ground it in reality. Force it to answer based solely on the provided context documents.
 
 # Excel World Championships. Oh hell yeah.
 
-* Road to Las Vegas happening now. Want to find out who won Battle I of the qualifier rounds.
-* Get LLM with knowlege cutoff in past.
-* Show snippets of the setup code.
-* Ask who won battle I - get bullshit answer
+[Excel World Championships exists](https://excel-esports.com). Oh sweet nerds, how I love you. Do yourself a favour and watch this:
+
+[
+Live-stream announcers losing their minds on Microsoft Excel Championship 2023](https://youtu.be/AryjgCGjAB8?si=-lmIHYR484bTqP9f)
+
+Tell me you don't wanna dominate a spreadsheet now!
+
+The 2026 qualifiers (Road to Las Vegas) are on right now. Say we want to find out who won Battle I in the qualifying rounds. Say that we are stuck with an older model with a knowledge cutoff of August 2024? 
+
+Everyone, meet [Gemma 3](https://ai.google.dev/gemma/docs/core/model_card_3#training_dataset). Poor Gemma 3 will be used to show you how LLMs can be confidently wrong.
+
+```python
+from huggingface_hub import hf_hub_download
+from llama_cpp import Llama
+
+HUGGING_FACE_REPO_ID = "unsloth/gemma-3-4b-it-GGUF"
+MODEL_FILENAME = "gemma-3-4b-it-Q4_K_M.gguf"
+MODEL_REVISION = "5c28c76ebfeeee5f3676f0518e5fc2ab67beffb4"
+
+model_fpath = hf_hub_download(
+    repo_id=HUGGING_FACE_REPO_ID, filename=MODEL_FILENAME, revision=MODEL_REVISION
+)
+```
+
+Let's ask it a question it cannot know the correct answer to:
 
 > Who won Battle I of Road to Las Vegas 2026?
 
-The response:
+This is the response:
 
 > As of today, November 2, 2023, **Team Liquid** won Battle I of Road to Las Vegas 2026!
 > 
 > They defeated Team Solo Quilts in a dominant 3-0 victory.
 
-* Problem: LLM clearly doesn't know a thing about the qualifiers. Not in training data. It also sounds so confident while being so bloody wrong (sounds like people I've met in my career)
+...wtf? Pure rubbish! Silly LLM. You know not what you do not know. How can you be so confident while being completely wrong? Sounds like some people we've met in real life, right?
 
-## Prompt Grounding
+## Ground the LLM in reality
 
 * Solution: LLM is off with the fairies. It has done too much acid. Bring it back to reality by grounding its response in "reality". How do we do that? Via a special prompt.
 * Note that this is part of the RAG, which we will be working towards across multiple patterns

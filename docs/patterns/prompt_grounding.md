@@ -44,6 +44,8 @@ Let's ask it a question it cannot know the correct answer to:
 > Who won Battle I of Road to Las Vegas 2026?
 
 ```python
+TEMPERATURE = 0.0
+
 question = "Who won Battle I of Road to Las Vegas 2026?"
 
 llm_response = llm.create_chat_completion(
